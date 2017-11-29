@@ -1,5 +1,6 @@
 import os
 import random
+import re
 import pymorphy2
 from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
 from joke import random_joke
@@ -10,20 +11,14 @@ PORT = int(os.environ.get('PORT', '8443'))
 URL = os.environ['URL']
 
 def joke(bot, update):
-    words = update.message.text.replace(
-            '/joke@ghetto_aggro_bot ', '').replace(
-            '/joke ', '').replace(
-            '/joke', '')
+    words = re.sub('\/joke(@\w+)?', '', update.message.text)
     if len(words) and random.randint(0, 100) < 10:
         joke = random_joke(words)
         if joke:
             update.message.reply_text(joke)
 
 def direct_joke(bot, update):
-    words = update.message.text.replace(
-            '/joke@ghetto_aggro_bot ', '').replace(
-            '/joke ', '').replace(
-            '/joke', '')
+    words = re.sub('\/joke(@\w+)?', '', update.message.text)
     if len(words):
         answer = random_joke(words) or 'Чо?'
     else:
