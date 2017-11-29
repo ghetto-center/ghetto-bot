@@ -1,0 +1,15 @@
+language: python
+python:
+  - 3.6
+install:
+  - pip install -r requirements.txt
+script:
+  echo skip tests
+deploy:
+  skip_cleanup: true
+  provider: heroku
+  api_key:
+    secure: RTfpJB3Y+SjsBSczWw3e+dVY8dWpiOYPJPDGeO9jlQEgfsXBhz//STGy0Kt7yHmN+X+Hh9anoDhJH/OM1YcE2yPENXO8sFtRpU+PEStUutvDm/FdMNLj2OCqQhlIUJYBfL0nauvzXSKTMF9pVdp7WT8jF2daOc1HNMrGD0zCdEnLJTqYNl60opnV5kF9q7toGy10NIL8yk32HwU6Zt061pl3bRm5LTD0dMe2FztBeGXP32AFWkewyT3jSSZTOLy7MEeJ93Iq0A61Cfrteuhs7fBZHDYJwhRdTxL/moR9jySs6LsuCbqtQWS/tteHEhN2Le7U6hnkyHCMN0TKOHJWXbBNv2H29xJZznRBkrQ4bbn+bh2ahTtNb8mP0Imu6oZKvsLTywAnmcnMomu94Py6egziBH2+KCWptQWRzgxkDzNdgNInyYeT+fXM40UH+Y8lAJVrWd87srgUdRX6n0maDpDQMM4YAGolrtFO5we/Z+4zc42WSgjFKGrVhELO4N0qYUapn/RKTSTCzbTmpdRlQRkgGjUFyFwFChVTB2za4/wIKlqqqqPybDgqnCIEpRQgl/BykSSy5jTzZ1hK6CzCTW7DDXSXoyeJZQCWNeZr9Mefr3YPfmML2lwmiPG2VTrkZrdKXS+BpgmaUrva9oP6EjXA+kgKKYHb0EQ4za5hQjw=
+  app: mamkobot
+  run:
+    - python bot.py
