@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
+import os,sys,inspect
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from joke import mamka, anus, anus_rude, how_you_doing, is_good, is_plan, fag_reply
 
 
