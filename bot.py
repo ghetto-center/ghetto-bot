@@ -12,7 +12,7 @@ morph = pymorphy2.MorphAnalyzer()
 TOKEN = os.environ['TOKEN']
 PORT = int(os.environ.get('PORT', '8443'))
 URL = os.environ.get('URL')
-POLL = int(os.environ.get('POLL'))
+POLL = int(os.environ.get('POLL', 0))
 LOGLEVEL = os.environ.get('LOGLEVEL', 'CRITICAL')
 
 CHATS = set([])

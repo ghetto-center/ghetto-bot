@@ -174,7 +174,7 @@ def looks_like_plan(input):
 
 
 def fag_reply(input):
-    match = re.search('\s*[HН]\s*[EЕ]\s*[TТ]\s*([?!.]+)?\s*$', input, re.I)
+    match = re.search('(^|\s+)[HН]\s*[EЕ]\s*[TТ]\s*([?!.]+)?\s*$', input, re.I)
     if match:
         return 'Пидора ответ!'
     return None
