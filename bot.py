@@ -70,7 +70,7 @@ def direct_joke(bot, update):
     if len(words):
         answer = regex_joke(words) or random_joke(words) or 'Чо?'
     else:
-        answer = 'Не нашел глагола'
+        answer = 'Я не очень умный'
 
     logger.debug('joke: ' + answer)
     update.message.reply_text(answer)
