@@ -95,6 +95,7 @@ class TestJokeClass(unittest.TestCase):
         self.assertEqual(fag_reply('aa НЕТ  '), 'Пидора ответ!')
         self.assertEqual(fag_reply('aa НЕТ !!?? '), 'Пидора ответ!')
         self.assertEqual(fag_reply('нет ты'), None)
+        self.assertEqual(fag_reply('континет'), None)
 
 
 if __name__ == '__main__':
