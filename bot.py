@@ -5,7 +5,7 @@ import re
 import logging
 import pymorphy2
 from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
-from joke import random_joke, regex_joke, dict_joke, sticker_id, reply_sticker_id
+from joke import random_joke, regex_joke, dict_joke, sticker_id, reply_sticker_id, random_dumb_joke, random_mom_joke
 from joke_utils import get_next_start, rnd_percent
 
 morph = pymorphy2.MorphAnalyzer()
@@ -69,8 +69,10 @@ def direct_joke(bot, update):
     logger.debug('words: ' + str(words))
     if len(words):
         answer = regex_joke(words) or random_joke(words) or 'Чо?'
+    elif rnd_percent(30):
+        answer = random_dumb_joke()
     else:
-        answer = 'Я не очень умный'
+        answer = random_mom_joke()
 
     logger.debug('joke: ' + answer)
     update.message.reply_text(answer)
