@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
+import os
+import sys
 import unittest
-import os,sys,inspect
+
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
-from joke import mamka, anus, anus_rude, how_you_doing, is_good, is_plan, fag_reply
+from app.joke import mamka, anus, anus_rude, how_you_doing, is_good, is_plan, fag_reply
 
 
 class TestJokeClass(unittest.TestCase):
