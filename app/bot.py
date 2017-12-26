@@ -90,7 +90,7 @@ class GhettoBotUpdater(Updater):
         self.add_message_handler(self.joke, pass_user_data=True)
         self.add_command_handler('joke', self.direct_joke, pass_args=True)
 
-        self.start_polling()
+        # self.start_polling()
         self.start_webhook(port=config.get('PORT'))
         self.idle()
 
