@@ -1,0 +1,29 @@
+{
+  "LOG_LEVEL": "DEBUG",
+  "TOKEN": "",
+  "PORT": 8080,
+  "URL": "",
+  "POLL": 0,
+  "logging": {
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+      "standard": {
+        "format": "[%(asctime)s][%(levelname)s][%(funcName)s] %(message)s"
+      }
+    },
+    "handlers": {
+      "console": {
+        "class": "logging.StreamHandler",
+        "formatter": "standard"
+      }
+    },
+    "loggers": {},
+    "root": {
+      "handlers": [
+        "console"
+      ],
+      "level": "DEBUG"
+    }
+  }
+}
