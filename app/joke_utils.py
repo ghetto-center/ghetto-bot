@@ -1,10 +1,13 @@
 #! /usr/bin/env python3
 
 import datetime
-import random
 import logging
+import random
 from enum import IntEnum
+
 Week = IntEnum('Week', 'mon tue wed thu fri sat sun', start=0)
+
+logger = logging.getLogger(__name__)
 
 
 def get_next_date():
@@ -31,13 +34,13 @@ def get_next_start():
         hour=t.hour,
         minute=t.minute,
         second=t.second)
-    logging.info('get_next_start:' + str(dt))
+    logger.info('get_next_start:' + str(dt))
     return dt
 
 
 def get_next_start_dev():
     dt = datetime.datetime.now() + datetime.timedelta(seconds=random.randint(10, 30))
-    logging.info('get_next_start:' + str(dt))
+    logger.info('get_next_start:' + str(dt))
     return dt
 
 

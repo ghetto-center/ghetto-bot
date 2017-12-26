@@ -1,11 +1,13 @@
 #! /usr/bin/env python3
 
-import sys
-import re
 import random
+import re
+import sys
+
 import pymorphy2
-import pymorphy2.tokenizers
 import pymorphy2.shapes
+import pymorphy2.tokenizers
+
 from joke_utils import rnd_percent
 
 morph = pymorphy2.MorphAnalyzer()
