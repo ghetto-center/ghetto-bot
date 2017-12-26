@@ -13,9 +13,6 @@ logger = logging.getLogger(__name__)
 
 morph = pymorphy2.MorphAnalyzer()
 
-TOKEN = config.get('TOKEN')
-PORT = config.get('PORT')
-
 
 def save_chat_id(func):
     def wrap(*args, **kwargs):
@@ -94,12 +91,12 @@ class GhettoBotUpdater(Updater):
         self.add_command_handler('joke', self.direct_joke, pass_args=True)
 
         self.start_polling()
-        self.start_webhook(port=PORT)
+        self.start_webhook(port=config.get('PORT'))
         self.idle()
 
 
 def start():
-    GhettoBotUpdater(token=TOKEN, workers=config.get('WORKERS')).start_ghetto_bot()
+    GhettoBotUpdater(token=config.get('TOKEN'), workers=config.get('WORKERS')).start_ghetto_bot()
 
 
 if __name__ == '__main__':
