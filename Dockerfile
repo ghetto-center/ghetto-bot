@@ -7,7 +7,8 @@ COPY ./app /app
 WORKDIR /app
 RUN python -m pip install -r requirements.txt
 
-ENV CONFIG_FILE '/app/config/default_config.json'
+ENV CONFIG_FILE /app/config/default_config.json
+VOLUME /config
 
 EXPOSE 8080
 
