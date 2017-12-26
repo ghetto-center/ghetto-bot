@@ -1,7 +1,7 @@
 {
   "LOG_LEVEL": "DEBUG",
   "WORKERS": 10,
-  "TOKEN": "501318756:AAE7mTnQkCbacD_vMssWUl9SBHRmbvjvWHE",
+  "TOKEN": "",
   "PORT": 8080,
   "URL": "",
   "POLL": 0,
