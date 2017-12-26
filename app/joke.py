@@ -8,7 +8,7 @@ import pymorphy2
 import pymorphy2.shapes
 import pymorphy2.tokenizers
 
-from app.joke_utils import rnd_percent
+from joke_utils import rnd_percent
 
 morph = pymorphy2.MorphAnalyzer()
 
