@@ -16,7 +16,5 @@ config = load_from_file()
 config.update({
     'TOKEN': config.get('TOKEN') or os.environ.get('TOKEN'),
     'PORT': config.get('PORT') or int(os.environ.get('PORT', '8443')),
-    'URL': os.environ.get('URL'),
-    'POLL': int(os.environ.get('POLL', 0)),
     'LOG_LEVEL': config.get('LOG_LEVEL') or os.environ.get('LOG_LEVEL', 'CRITICAL'),
 })

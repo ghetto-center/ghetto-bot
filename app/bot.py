@@ -5,9 +5,9 @@ import logging
 import pymorphy2
 from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
 
-from app.app_config import config
-from joke import random_joke, regex_joke, dict_joke, sticker_id, reply_sticker_id, random_dumb_joke, random_mom_joke
-from joke_utils import get_next_start, rnd_percent
+from app.config.app_config import config
+from app.joke_utils import get_next_start, rnd_percent
+from app.joke import random_joke, regex_joke, dict_joke, sticker_id, reply_sticker_id, random_dumb_joke, random_mom_joke
 
 logger = logging.getLogger(__name__)
 
@@ -99,7 +99,7 @@ class GhettoBotUpdater(Updater):
 
 
 def start():
-    GhettoBotUpdater(token=TOKEN, workers=10).start_ghetto_bot()
+    GhettoBotUpdater(token=TOKEN, workers=config.get('WORKERS')).start_ghetto_bot()
 
 
 if __name__ == '__main__':
