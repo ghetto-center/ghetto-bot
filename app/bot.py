@@ -90,7 +90,11 @@ class GhettoBotUpdater(Updater):
         self.add_message_handler(self.joke, pass_user_data=True)
         self.add_command_handler('joke', self.direct_joke, pass_args=True)
 
-        # self.start_polling()
+        # if u see Error while getting Updates: Conflict: terminated by other long poll or webhook (409)
+        # when anyone run another instance this your TOKEN
+        # find and kill him
+
+        self.start_polling()
         self.start_webhook(port=config.get('PORT'))
         self.idle()
 
